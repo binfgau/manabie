@@ -1,41 +1,84 @@
-#
+# Multi-step Demo
 
-## Tối ưu context value
+## Tech
 
-- Khi sử dụng context trong React, value của context provider thay đổi thì tất cả những component sử dụng context đó sẽ bị render lại. Nó re-render ngay khi chúng ta đã memo component đó.
-- Ex:
+ReactJS, TypeScript, MaterialUI, Jest Test, Cypress
 
+## How to run this code
+
+### Run `yarn` or `npm install` If this is the first time you clone this repo (`master` branch).
+
+### `npm start` or `yarn start`
+
+Run the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+## Structure
+
+```bash
+.
+├── __tests__
+├── assets
+├── components
+│   ├── avatar
+│   │   └── AvatarPersonal.tsx
+│   ├── button
+│   │   ├── MultiStepButton.tsx
+│   │   └── UploadButton.tsx
+│   ├── input
+│   │   └── ReactHookFormTextField.tsx
+│   └── stepper
+│       └── SignUpStepper.tsx
+├── constants
+│   ├── action-types.ts
+│   └── steps.ts
+├── context
+│   └── SignUpStateProvider.tsx
+├── hooks
+│   └── useDebounce.tsx
+├── layout
+│   ├── Layout.tsx
+│   └── MainNavigation.tsx
+├── pages
+│   ├── home
+│   │   └── HomePage.tsx
+│   └── signup
+│       ├── multi-step-form-state
+│       │   ├── actions.ts
+│       │   ├── reducer.ts
+│       │   └── types.ts
+│       ├── SignUp.tsx
+│       └── steps
+│           ├── AvatarInfo.tsx
+│           ├── PersonalInfo.tsx
+│           └── ReviewAllInfo.tsx
+├── store
+│   └── firebase.ts
+├── types
+│   ├── index.ts
+│   └── signup.ts
+├── utils
+├── App.test.tsx
+├── App.tsx
+├── index.tsx
+├── mockup.drawio
+├── react-app-env.d.ts
+├── reportWebVitals.ts
+├── router.tsx
+└── setupTests.ts
 ```
-export const AppStateProvider = ({
-  appState,
-  appDispatch,
-  children,
-}: AppStateProviderProps): JSX.Element => {
-  const value: [AppState, Dispatch<AppAction>] = () => [appState, appDispatch]
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
-};
-```
-
-- Nếu AppStateProvider re-render thì const value = [appState, appDispatch] được tạo mới, cho dù appState, appDispatch không thay đổi. Do đó nó sẽ làm cho tất cả các consumer re-render.
-
-- Một trong những cách fix nhanh nhất là chúng ta có thể sử dụng React.useMemo như sau:
-
-```
-export const AppStateProvider = ({
-  appState,
-  appDispatch,
-  children,
-}: AppStateProviderProps): JSX.Element => {
-  const value: [AppState, Dispatch<AppAction>] = useMemo(
-    () => [appState, appDispatch],
-    [appState, appDispatch]
-  );
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
-};
-```
-
-- Điều này đảm bảo rằng nếu lỡ như AppStateProvider có re-render vì một lý do không mong muốn nào đó thì value sẽ không thay đổi nếu count không đổi.
-
-http://thaunguyen.com/blog/reactjs/tu-hoc-reactjs-react-performace-toi-uu-context-value
-
-##
