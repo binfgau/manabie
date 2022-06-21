@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
 import { Box, Paper, Typography } from '@mui/material';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import SignUpStepper from '../../components/Stepper/SignUpStepper';
+import * as actionTypes from '../../constants/action-types';
+import { Steps } from '../../constants/steps';
+import { useSignUpState } from '../../context/SignUpStateProvider';
 import AvatarInfo from './steps/AvatarInfo';
 import PersonalInfo from './steps/PersonalInfo';
 import ReviewAllInfo from './steps/ReviewAllInfo';
-import { useSignUpState } from '../../context/SignUpStateProvider';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import * as actionTypes from '../../constants/action-types';
-import SignUpStepper from '../../components/stepper/SignUpStepper';
-import { Steps } from '../../constants/steps';
-import { FormValues } from '../../types';
 
 const SignUp = (): JSX.Element => {
   const [formData, setFormData] = useState({

@@ -1,4 +1,4 @@
-import { Avatar, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React from 'react';
 import {
@@ -7,9 +7,9 @@ import {
   FieldValues,
   UseFormRegister,
 } from 'react-hook-form';
-import AvatarPersonal from '../../../components/avatar/AvatarPersonal';
-import MultiStepButton from '../../../components/button/MultiStepButton';
-import UploadButton from '../../../components/button/UploadButton';
+import AvatarPersonal from '../../../components/Avatar/AvatarPersonal';
+import MultiStepButton from '../../../components/Button/MultiStepButton';
+import UploadButton from '../../../components/Button/UploadButton';
 import { Steps } from '../../../constants/steps';
 import { FormValues } from '../../../types';
 

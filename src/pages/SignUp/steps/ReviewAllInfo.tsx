@@ -1,6 +1,6 @@
-import { Avatar, Box, Button, Card, Typography } from '@mui/material';
-import AvatarPersonal from '../../../components/avatar/AvatarPersonal';
-import MultiStepButton from '../../../components/button/MultiStepButton';
+import { Card, Typography } from '@mui/material';
+import AvatarPersonal from '../../../components/Avatar/AvatarPersonal';
+import MultiStepButton from '../../../components/Button/MultiStepButton';
 import { Steps } from '../../../constants/steps';
 import { FormValues } from '../../../types';
 

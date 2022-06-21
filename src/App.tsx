@@ -2,10 +2,10 @@ import React, { useReducer } from 'react';
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import SignUp from './pages/signup/SignUp';
+import SignUp from './pages/SignUp/SignUp';
 import Layout from './layout/Layout';
-import { SignUpState } from './pages/signup/multi-step-form-state/types';
-import { signUpReducer } from './pages/signup/multi-step-form-state/reducer';
+import { SignUpState } from './pages/SignUp/multi-step-form-state/types';
+import { signUpReducer } from './pages/SignUp/multi-step-form-state/reducer';
 import { SignUpStateProvider } from './context/SignUpStateProvider';
 
 const theme = createTheme();

@@ -1,9 +1,9 @@
-import { Box, Button, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
-import { GenericInputErrors } from '../../../types';
-import ReactHookFormTextField from '../../../components/input/ReactHookFormTextField';
-import MultiStepButton from '../../../components/button/MultiStepButton';
+import MultiStepButton from '../../../components/Button/MultiStepButton';
+import ReactHookFormTextField from '../../../components/Input/ReactHookFormTextField';
 import { Steps } from '../../../constants/steps';
+import { GenericInputErrors } from '../../../types';
 
 interface PersonalInfoProps {
   register: UseFormRegister<FieldValues>;
