@@ -33,30 +33,3 @@ export const completeForm = (
     },
   };
 };
-
-/*
-export const completeFormActiveStep = (
-  state: AppState,
-  payload: { activeStep: number }
-): AppState => {
-  const steps = state.appData.formConfig.steps;
-  const activeStepIndex = steps.findIndex((el) => el.id === payload.activeStep);
-  const updatedStep = { ...steps[activeStepIndex], isCompleted: true };
-  const updatedSteps = [
-    ...steps.slice(0, activeStepIndex),
-    updatedStep,
-    ...steps.slice(activeStepIndex + 1),
-  ];
-
-  return {
-    appData: {
-      ...state.appData,
-      formConfig: {
-        ...state.appData.formConfig,
-        activeStep: payload.activeStep + 1,
-        steps: updatedSteps,
-      },
-    },
-  };
-};
-*/
