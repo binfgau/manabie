@@ -35,14 +35,14 @@ Your app is ready to be deployed!
 ├── __tests__
 ├── assets
 ├── components
-│   ├── avatar
+│   ├── Avatar
 │   │   └── AvatarPersonal.tsx
-│   ├── button
+│   ├── Button
 │   │   ├── MultiStepButton.tsx
 │   │   └── UploadButton.tsx
-│   ├── input
+│   ├── Input
 │   │   └── ReactHookFormTextField.tsx
-│   └── stepper
+│   └── Stepper
 │       └── SignUpStepper.tsx
 ├── constants
 │   ├── action-types.ts
@@ -55,9 +55,9 @@ Your app is ready to be deployed!
 │   ├── Layout.tsx
 │   └── MainNavigation.tsx
 ├── pages
-│   ├── home
+│   ├── Home
 │   │   └── HomePage.tsx
-│   └── signup
+│   └── SignUp
 │       ├── multi-step-form-state
 │       │   ├── actions.ts
 │       │   ├── reducer.ts
