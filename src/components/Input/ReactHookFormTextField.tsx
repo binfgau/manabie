@@ -1,25 +1,24 @@
-import React from 'react';
-import { TextField } from '@mui/material';
-import { FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form';
-import { GenericInputErrors } from '../../types';
+import { TextField, TextFieldProps } from '@mui/material';
+import { RegisterOptions, useFormContext } from 'react-hook-form';
 
 interface ReactHookFormTextFieldProps {
-  name: string;
+  name: Exclude<TextFieldProps['name'], undefined>;
   label: string;
   autoComplete: string;
-  register: UseFormRegister<FieldValues>;
   rules: RegisterOptions;
-  errors: GenericInputErrors;
 }
 
 const ReactHookFormTextField = ({
   label,
   name,
   autoComplete,
-  register,
-  errors,
   rules,
 }: ReactHookFormTextFieldProps) => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <TextField
       label={label}

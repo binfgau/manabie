@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import BackupIcon from '@mui/icons-material/Backup';
 
-const UploadButton = (): JSX.Element => {
+const UploadButton = () => {
   return (
     <Button
       variant='text'
