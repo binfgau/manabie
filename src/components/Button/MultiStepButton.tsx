@@ -1,18 +1,47 @@
 import { Box, Button } from '@mui/material';
-import React from 'react';
+import { Steps } from '../../constants/steps';
+import ButtonBase, { ButtonBaseProps } from './ButtonBase';
 
-interface MultiStepButtonProps {
+export interface MultiStepButtonProps {
   activeStep: number;
-  onClickHandler?: () => void;
+  onClickHandler?: ButtonBaseProps['onClick'];
 }
 
 const MultiStepButton = ({
   activeStep,
   onClickHandler,
-}: MultiStepButtonProps): JSX.Element => {
+}: MultiStepButtonProps) => {
+  const renderNextButtonsWithActiveStep = (
+    activeStep: MultiStepButtonProps['activeStep']
+  ) => {
+    switch (activeStep) {
+      case Steps.PersonalInfo:
+      case Steps.AvatarInfo:
+        return <ButtonBase type='submit'>Next</ButtonBase>;
+      case Steps.ReviewAllInfo:
+        return <ButtonBase type='submit'>Submit</ButtonBase>;
+      default:
+        return <></>;
+    }
+  };
+
+  const renderBackButtonsWithActiveStep = (
+    activeStep: MultiStepButtonProps['activeStep']
+  ) => {
+    switch (activeStep) {
+      case Steps.ReviewAllInfo:
+      case Steps.AvatarInfo: {
+        return <ButtonBase onClick={onClickHandler}>Back</ButtonBase>;
+      }
+
+      default:
+        return <></>;
+    }
+  };
+
   return (
     <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-      {activeStep !== 0 && (
+      {activeStep !== Steps.PersonalInfo && (
         <Button onClick={onClickHandler} sx={{ mt: 3, ml: 1 }}>
           Back
         </Button>
@@ -20,6 +49,8 @@ const MultiStepButton = ({
       <Button variant='contained' sx={{ mt: 3, ml: 1 }} type='submit'>
         {activeStep === 2 ? 'Submit' : 'Next'}
       </Button>
+
+      {/* {renderActionButtonsWithActiveStep(activeStep)} */}
     </Box>
   );
 };

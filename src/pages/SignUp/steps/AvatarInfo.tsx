@@ -1,12 +1,7 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React from 'react';
-import {
-  Control,
-  Controller,
-  FieldValues,
-  UseFormRegister,
-} from 'react-hook-form';
+import { Controller, useFormContext } from 'react-hook-form';
 import AvatarPersonal from '../../../components/Avatar/AvatarPersonal';
 import MultiStepButton from '../../../components/Button/MultiStepButton';
 import UploadButton from '../../../components/Button/UploadButton';
@@ -23,17 +18,13 @@ interface AvatarInfoProps {
   onPrevClick: () => void;
   formData: FormValues;
   setFormData: (formData: FormValues) => void;
-  register: UseFormRegister<FieldValues>;
-  control: Control<FieldValues>;
 }
 
 const AvatarInfo = ({
   onPrevClick,
   formData,
   setFormData,
-  register,
-  control,
-}: AvatarInfoProps): JSX.Element => {
+}: AvatarInfoProps) => {
   const avatarHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const reader = new FileReader();
     reader.onload = () => {
@@ -43,6 +34,8 @@ const AvatarInfo = ({
     };
     reader.readAsDataURL(event.target.files![0]);
   };
+
+  const { control } = useFormContext();
 
   return (
     <>

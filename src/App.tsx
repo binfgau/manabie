@@ -1,16 +1,16 @@
-import React, { useReducer } from 'react';
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useReducer } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import SignUp from './pages/SignUp/SignUp';
-import Layout from './layout/Layout';
-import { SignUpState } from './pages/SignUp/multi-step-form-state/types';
-import { signUpReducer } from './pages/SignUp/multi-step-form-state/reducer';
 import { SignUpStateProvider } from './context/SignUpStateProvider';
+import Layout from './layout/Layout';
+import { signUpReducer } from './pages/SignUp/multi-step-form-state/reducer';
+import { SignUpState } from './pages/SignUp/multi-step-form-state/types';
+import SignUp from './pages/SignUp/SignUp';
 
 const theme = createTheme();
 
-const App = (): JSX.Element => {
+const App = () => {
   const defaultState: SignUpState = {
     signUpData: {
       formConfig: {

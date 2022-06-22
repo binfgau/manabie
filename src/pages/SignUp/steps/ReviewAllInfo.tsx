@@ -1,12 +1,14 @@
 import { Card, Typography } from '@mui/material';
 import AvatarPersonal from '../../../components/Avatar/AvatarPersonal';
-import MultiStepButton from '../../../components/Button/MultiStepButton';
+import MultiStepButton, {
+  MultiStepButtonProps,
+} from '../../../components/Button/MultiStepButton';
 import { Steps } from '../../../constants/steps';
 import { FormValues } from '../../../types';
 
 interface ReviewAllInfoProps {
   formData: FormValues;
-  onPrevClick: () => void;
+  onPrevClick: MultiStepButtonProps['onClickHandler'];
 }
 
 const ReviewAllInfo = ({ formData, onPrevClick }: ReviewAllInfoProps) => {

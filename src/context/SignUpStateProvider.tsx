@@ -18,7 +18,7 @@ export const SignUpStateProvider = ({
   signUpState,
   signUpDispatch,
   children,
-}: SignUpStateProviderProps): JSX.Element => {
+}: SignUpStateProviderProps) => {
   const value: [SignUpState, Dispatch<SignUpAction>] = useMemo(
     () => [signUpState, signUpDispatch],
     [signUpState, signUpDispatch]
