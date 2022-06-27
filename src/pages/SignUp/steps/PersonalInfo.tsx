@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
 import MultiStepButton from '../../../components/Button/MultiStepButton';
-import ReactHookFormTextField from '../../../components/Input/ReactHookFormTextField';
+import RHFTextField from '../../../components/Input/RHFTextField';
 import { Steps } from '../../../constants/steps';
 
 const PersonalInfo = () => {
@@ -8,8 +8,8 @@ const PersonalInfo = () => {
     <>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
-          <ReactHookFormTextField
-            name='firstName'
+          <RHFTextField
+            nameRegister='firstName'
             label='First name'
             autoComplete='given-name'
             rules={{
@@ -21,8 +21,8 @@ const PersonalInfo = () => {
           />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <ReactHookFormTextField
-            name='lastName'
+          <RHFTextField
+            nameRegister='lastName'
             label='Last name'
             autoComplete='family-name'
             rules={{

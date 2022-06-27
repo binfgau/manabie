@@ -1,6 +1,6 @@
 import React from 'react';
 import { Step, StepLabel, Stepper } from '@mui/material';
-import { SignUpData } from '../../types';
+import { SignUpData } from '../../types/SignUpProvider';
 
 const SignUpStepper = ({ formConfig }: SignUpData) => {
   return (

@@ -6,7 +6,7 @@ const MainNavigation = () => {
     <AppBar
       position='absolute'
       color='default'
-      elevation={0}
+      elevation={10}
       sx={{
         position: 'relative',
         borderBottom: (t) => `1px solid ${t.palette.divider}`,

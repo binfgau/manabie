@@ -6,7 +6,7 @@ import SignUpStepper from '../../components/Stepper/SignUpStepper';
 import * as actionTypes from '../../constants/action-types';
 import { Steps } from '../../constants/steps';
 import { useSignUpState } from '../../context/SignUpStateProvider';
-import { FormValues } from '../../types';
+import { FormValues } from '../../types/FormValues';
 import AvatarInfo from './steps/AvatarInfo';
 import PersonalInfo from './steps/PersonalInfo';
 import ReviewAllInfo from './steps/ReviewAllInfo';
@@ -79,7 +79,11 @@ const SignUp = () => {
       <Typography component='h1' variant='h4' align='center' color='primary'>
         Sign Up
       </Typography>
-      <Box component='form' onSubmit={methods.handleSubmit(onSubmitHandler)}>
+      <Box
+        component='form'
+        noValidate
+        onSubmit={methods.handleSubmit(onSubmitHandler)}
+      >
         <Paper
           variant='outlined'
           sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}

@@ -6,7 +6,7 @@ import AvatarPersonal from '../../../components/Avatar/AvatarPersonal';
 import MultiStepButton from '../../../components/Button/MultiStepButton';
 import UploadButton from '../../../components/Button/UploadButton';
 import { Steps } from '../../../constants/steps';
-import { FormValues } from '../../../types';
+import { FormValues } from '../../../types/FormValues';
 
 const Input = styled('input')({
   display: 'none',
@@ -46,7 +46,7 @@ const AvatarInfo = ({
           alignItems: 'center',
         }}
       >
-        <AvatarPersonal srcImage={formData.avatar} />
+        <AvatarPersonal src={formData.avatar} />
         <label htmlFor='contained-button-file'>
           <Controller
             control={control}

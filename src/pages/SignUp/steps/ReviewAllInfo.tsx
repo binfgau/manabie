@@ -4,7 +4,7 @@ import MultiStepButton, {
   MultiStepButtonProps,
 } from '../../../components/Button/MultiStepButton';
 import { Steps } from '../../../constants/steps';
-import { FormValues } from '../../../types';
+import { FormValues } from '../../../types/FormValues';
 
 interface ReviewAllInfoProps {
   formData: FormValues;
@@ -24,7 +24,7 @@ const ReviewAllInfo = ({ formData, onPrevClick }: ReviewAllInfoProps) => {
           borderRadius: '20px',
         }}
       >
-        <AvatarPersonal srcImage={formData.avatar} />
+        <AvatarPersonal src={formData.avatar} />
         <Typography
           component='div'
           variant='h5'
