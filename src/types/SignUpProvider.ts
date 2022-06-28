@@ -17,9 +17,3 @@ export interface FormConfig {
 export interface SignUpData {
   formConfig: FormConfig;
 }
-
-export type FormValues = {
-  firstName: string;
-  lastName: string;
-  avatar: string;
-};

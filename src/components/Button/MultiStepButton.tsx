@@ -1,9 +1,10 @@
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
 import { Steps } from '../../constants/steps';
+import { Step } from '../../types/SignUpProvider';
 import ButtonBase, { ButtonBaseProps } from './ButtonBase';
 
 export interface MultiStepButtonProps {
-  activeStep: number;
+  activeStep: Step['id'];
   onClickHandler?: ButtonBaseProps['onClick'];
 }
 
@@ -30,10 +31,8 @@ const MultiStepButton = ({
   ) => {
     switch (activeStep) {
       case Steps.ReviewAllInfo:
-      case Steps.AvatarInfo: {
+      case Steps.AvatarInfo:
         return <ButtonBase onClick={onClickHandler}>Back</ButtonBase>;
-      }
-
       default:
         return <></>;
     }
@@ -41,16 +40,8 @@ const MultiStepButton = ({
 
   return (
     <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-      {activeStep !== Steps.PersonalInfo && (
-        <Button onClick={onClickHandler} sx={{ mt: 3, ml: 1 }}>
-          Back
-        </Button>
-      )}
-      <Button variant='contained' sx={{ mt: 3, ml: 1 }} type='submit'>
-        {activeStep === 2 ? 'Submit' : 'Next'}
-      </Button>
-
-      {/* {renderActionButtonsWithActiveStep(activeStep)} */}
+      {renderBackButtonsWithActiveStep(activeStep)}
+      {renderNextButtonsWithActiveStep(activeStep)}
     </Box>
   );
 };

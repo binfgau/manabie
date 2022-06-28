@@ -4,8 +4,8 @@ import { useReducer } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { SignUpStateProvider } from './context/SignUpStateProvider';
 import Layout from './layout/Layout';
-import { signUpReducer } from './pages/SignUp/multi-step-form-state/reducer';
-import { SignUpState } from './pages/SignUp/multi-step-form-state/types';
+import { signUpReducer } from './context/multi-step-form-state/reducer';
+import { SignUpState } from './context/multi-step-form-state/types';
 import SignUp from './pages/SignUp/SignUp';
 
 const theme = createTheme();

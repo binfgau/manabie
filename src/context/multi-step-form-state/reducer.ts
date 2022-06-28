@@ -1,6 +1,6 @@
 import { SignUpAction, SignUpState } from './types';
 import { completeForm, prevStep } from './actions';
-import * as actionTypes from '../../../constants/action-types';
+import * as actionTypes from '../../constants/action-types';
 
 export const signUpReducer = (
   state: SignUpState,

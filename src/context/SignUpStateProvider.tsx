@@ -4,7 +4,7 @@ import {
   SignUpState,
   ContextValue,
   SignUpStateReturn,
-} from '../pages/SignUp/multi-step-form-state/types';
+} from './multi-step-form-state/types';
 
 export const SignUpContext = createContext<ContextValue>(undefined);
 

@@ -1,10 +1,7 @@
-import { Container } from '@mui/material';
-import React from 'react';
+import { Container, ContainerProps } from '@mui/material';
 import MainNavigation from './MainNavigation';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
+interface LayoutProps extends ContainerProps {}
 
 const Layout = ({ children }: LayoutProps) => {
   return (

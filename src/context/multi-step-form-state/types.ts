@@ -1,5 +1,5 @@
 import { Dispatch } from 'react';
-import { SignUpData, FluxStandardAction } from '../../../types';
+import { SignUpData, FluxStandardAction } from '../../types/SignUpProvider';
 
 export interface PrevStep extends FluxStandardAction {
   type: 'PREV_STEP';
