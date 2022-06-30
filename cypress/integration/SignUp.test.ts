@@ -10,7 +10,7 @@ describe('Multi step form functionality', () => {
       'have.text',
       'This is a required field'
     );
-    cy.get('input[name=firstName]').type('Nguyễn Văn');
+    cy.get('input[name=firstName]').type('Văn');
     cy.get('button').click();
     cy.get('input[name=lastName]').type('Bình');
     cy.get('button').click();
