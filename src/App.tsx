@@ -1,7 +1,7 @@
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useReducer } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { SignUpStateProvider } from './context/SignUpStateProvider';
 import Layout from './layout/Layout';
 import { signUpReducer } from './context/multi-step-form-state/reducer';
@@ -30,22 +30,24 @@ const App = () => {
   );
 
   return (
-    <ThemeProvider theme={theme}>
-      <SignUpStateProvider
-        signUpState={signUpState}
-        signUpDispatch={signUpDispatch}
-      >
-        <CssBaseline />
-        <Layout>
-          <Switch>
-            <Route exact path='/' component={SignUp} />
-            <Route path='*'>
-              <Redirect to='/' />
-            </Route>
-          </Switch>
-        </Layout>
-      </SignUpStateProvider>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <SignUpStateProvider
+          signUpState={signUpState}
+          signUpDispatch={signUpDispatch}
+        >
+          <CssBaseline />
+          <Layout>
+            <Switch>
+              <Route exact path='/' component={SignUp} />
+              <Route path='*'>
+                <Redirect to='/' />
+              </Route>
+            </Switch>
+          </Layout>
+        </SignUpStateProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 
