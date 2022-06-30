@@ -33,6 +33,7 @@ const RHFTextField = ({
       {...register(nameRegister, rules)}
       error={!!errors[nameRegister]}
       helperText={errors[nameRegister]?.message ?? ''}
+      onChange={(e) => (e.target.value = e.target.value.trim())}
       {...rest}
     />
   );
